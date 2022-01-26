@@ -188,16 +188,6 @@ extension MultiSlider {
         updateValueLabel(i)
     }
 
-    func updateValueLabel(_ i: Int) {
-        let labelValue: CGFloat
-        if isValueLabelRelative {
-            labelValue = i > 0 ? value[i] - value[i - 1] : value[i] - minimumValue
-        } else {
-            labelValue = value[i]
-        }
-        valueLabels[i].text = valueLabelFormatter.string(from: NSNumber(value: Double(labelValue)))
-    }
-
     func updateAllValueLabels() {
         for i in 0 ..< valueLabels.count {
             updateValueLabel(i)
